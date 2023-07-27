@@ -59,6 +59,9 @@ async function onLoader() {
   try {
     page += 1;
 
+    let name = document.getElementsByName('searchQuery')[0];
+    let searchImage = name.value;
+
     const { hits, totalHits } = await fetchImages(searchImage, page);
 
     gallery.insertAdjacentHTML('beforeend', createMarkup(hits));
