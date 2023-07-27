@@ -21,7 +21,9 @@ async function onFormSubmit(evt) {
   try {
     evt.preventDefault();
 
-    const searchImage = form.elements.searchQuery.value.trim();
+    // searchImage = form.elements.searchQuery.value.trim();
+    let name = document.getElementsByName('searchQuery')[0];
+    let searchImage = name.value;
 
     if (searchImage === '') {
       Report.warning('You enter invalid Input. Try again.');
